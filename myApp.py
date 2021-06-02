@@ -55,31 +55,24 @@ reminderMinutes.grid(row=2, column=3, padx=(0,30), pady=10)
 #dropdown menu for setting timer
 options = [1,10, 20,30,40,50,60]
 selected = IntVar(root)
-selected.set(1)
+selected.set(30)
 dropdown = OptionMenu(root, selected, *options)
 dropdown.config(bg="#E6f7ff")
 dropdown["menu"].config(bg="#Bee6f9")
 dropdown.grid(row=2, column = 1, pady=10)
 
 def time_Selected():
-    print(selected.get())
-    return selected.get()
-timeSelected = (selected.get() * 60 *1000)
-#timeSelected = 5000
+    print(selected.get() * 60 * 1000)
+    return (selected.get() * 60 * 1000)
 
-def printTime():
-    print(timeSelected)
+timechosen = int(time_Selected())
+timeSelected = (timechosen * 60 *1000)
 
 
 #change exit to drinkwater
 Button(root, text="Done Selecting", command = time_Selected, bg="#E6f7ff").grid(row=4,column=1, pady=20)
 Button(root, text="Close the program", command = exit, bg="#E6f7ff").grid(row=5,column=1, pady=20)
 
-def run():
-    DrinkWater(timeSelected)
-    root.after(2000,run)
-
-#root.after(2000,run)
-DrinkWater(timeSelected)
+DrinkWater(int(time_Selected()))
 root.mainloop()
 
