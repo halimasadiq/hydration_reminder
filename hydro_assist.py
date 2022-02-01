@@ -34,7 +34,7 @@ root.geometry("+{}+{}".format(positionRight, positionDown))
 
 #####################################################
 #heading
-myTitle = Label(root, text="Paani Pi Lo", font=("bold",10), bg="#E6f7ff")
+myTitle = Label(root, text="HydroAssist", font=("bold",10), bg="#E6f7ff")
 myTitle.grid(row=0, column=0, columnspan = 3, padx=50, pady=10, sticky='e')
 
 #reminderText
